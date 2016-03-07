@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Clicker</title>
     <link rel="stylesheet" href="style/style.css">
     <script src="js/main.js"></script>
 </head>
 <body>
     <canvas width="200" height="200" id="main"></canvas>
     <script src="js/drawer.js"></script>
-    <button onclick="incrementScore()" id="incr">Click on me!</button>
-    <p>Score:</p>
-    <p id="score">0</p>
+    <button onclick="incrementMoney()" id="incr">Click on me!</button>
+    <ul class="equip">
+        <li id="sword"><button onclick="buySword()">Sword (50g)</button></li>
+    </ul>
+    <ul class="money">
+        <li><p>Money:</p></li>
+        <li><p id="moneyCounter">0</p></li>
+    </ul>
 </body>
 </html>

@@ -4,12 +4,21 @@ body{
 
 #incr{
     position: absolute;
-    left: 500px;
-    height: 100px;
+    left: 20%;
+    height: 50px;
     font-size: 20px;
     background-color: #939393
 }
 
 p{
     color: #fff;
+    font-size: 20px;
+}
+
+.money{
+    position: absolute;
+    display: block;
+    list-style: none;
+    right: 50%;
+    top: 5%;
 }

@@ -2,7 +2,11 @@ var money = 0;
 var moneyPerClick = 1;
 var moneyPerSec = 0;
 
-var swordBuyed = false;
+setInterval(function () {
+    'use strict';
+    money += moneyPerSec;
+    refreshMoney();
+}, 1000);
 
 function refreshMoney() {
     'use strict';
@@ -15,21 +19,12 @@ function incrementMoney() {
     refreshMoney();
 }
 
-function buySword() {
+function refreshMoneyPerClick() {
     'use strict';
-    var price = 50;
-    if (money < price) {
-        alert('You didn\'t have enough money');
-        return;
-    }
-    if (swordBuyed) {
-        alert('You already buy it!');
-        return;
-    }
-    money -= price;
-    swordBuyed = true;
-    moneyPerClick += 1;
-    drawSword();
-    refreshMoney();
+    document.getElementById('moneyPerClick').innerHTML = moneyPerClick;
 }
 
+function refreshMoneyPerSec() {
+    'use strict';
+    document.getElementById('moneyPerSec').innerHTML = moneyPerSec;
+}

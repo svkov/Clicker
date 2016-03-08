@@ -37,7 +37,7 @@ ctx.stroke();
 function drawSword() {
     'use strict';
     ctx.beginPath();
-    ctx.strokeStyle = '#afafaf';
+    ctx.strokeStyle = '#0dff04';
     ctx.lineWidth = 4;
     ctx.moveTo(75, 100);
     ctx.lineTo(65, 80);
@@ -48,4 +48,16 @@ function drawSword() {
     ctx.moveTo(55, 80);
     ctx.quadraticCurveTo(100, 80, 40, 50);
     ctx.fill();
+}
+
+function drawHelmet() {
+    'use strict';
+    ctx.fillStyle = '#dbdb0a';
+    ctx.beginPath();
+    ctx.moveTo(75, 20);
+    ctx.lineTo(125, 20);
+    ctx.lineTo(100, -30);
+    ctx.lineTo(75, 20);
+    ctx.fill();
+    //TODO: draw helmet
 }

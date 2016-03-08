@@ -5,6 +5,7 @@
     <title>Clicker</title>
     <link rel="stylesheet" href="style/style.css">
     <script src="js/main.js"></script>
+    <script src="js/buy.js"></script>
 </head>
 <body>
     <canvas width="200" height="200" id="main"></canvas>
@@ -12,10 +13,15 @@
     <button onclick="incrementMoney()" id="incr">Click on me!</button>
     <ul class="equip">
         <li id="sword"><button onclick="buySword()">Sword (50g)</button></li>
+        <li id="helmet"><button onclick="buyHelmet()">Helmet (200g)</button></li>
     </ul>
     <ul class="money">
         <li><p>Money:</p></li>
         <li><p id="moneyCounter">0</p></li>
+        <li><p>Money per click:</p></li>
+        <li><p id="moneyPerClick">1</p></li>
+        <li><p>Money per second:</p></li>
+        <li><p id="moneyPerSec">0</p></li>
     </ul>
 </body>
 </html>

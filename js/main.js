@@ -2,6 +2,8 @@ var money = 0;
 var moneyPerClick = 1;
 var moneyPerSec = 0;
 
+var success = 0;
+
 setInterval(function () {
     'use strict';
     money += moneyPerSec;
@@ -27,4 +29,17 @@ function refreshMoneyPerClick() {
 function refreshMoneyPerSec() {
     'use strict';
     document.getElementById('moneyPerSec').innerHTML = moneyPerSec;
+}
+
+function refreshSuccess() {
+    'use strict';
+    document.getElementById('success').innerHTML = success;
+}
+
+function refreshAll() {
+    'use strict';
+    refreshMoney();
+    refreshMoneyPerClick();
+    refreshMoneyPerSec();
+    refreshSuccess();
 }

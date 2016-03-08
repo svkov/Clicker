@@ -1,13 +1,22 @@
 var swordBuyed = false;
 var helmetBuyed = false;
 
+function buy(price, mpk, mps, draw){
+    success += 1;
+    money -= price;
+    moneyPerClick += mpk;
+    moneyPerSec += mps;
+    draw();
+    refreshAll();
+}
+
 function checkPriceAndFlag(price, flag) {
     if (money < price) {
-        alert('You didn\'t have enough money');
+        makeMessage('You didn\'t have enough money');
         return false;
     }
     if (flag) {
-        alert('You already buy it!');
+        makeMessage('You already buy it!');
         return false;
     }
     return true;
@@ -19,25 +28,18 @@ function buySword() {
     if (!checkPriceAndFlag(price, swordBuyed)) {
         return;
     }
-    money -= price;
+    buy(price, 1, 0, drawSword);
     swordBuyed = true;
-    moneyPerClick += 1;
-    refreshMoneyPerClick();
-    drawSword();
-    refreshMoney();
+    makeMessage('You buy a sword!');
 }
 
 function buyHelmet() {
     'use strict';
-    var price = 1;
-    console.log('buy helmet');
+    var price = 200;
     if (!checkPriceAndFlag(price, helmetBuyed)) {
         return;
     }
-    money -= price;
+    buy(price, 0, 1, drawHelmet);
     helmetBuyed = true;
-    moneyPerSec += 1;
-    refreshMoneyPerSec();
-    drawHelmet();
-    refreshMoney();
+    makeMessage('You buy a helmet!');
 }

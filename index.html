@@ -6,11 +6,13 @@
     <link rel="stylesheet" href="style/style.css">
     <script src="js/main.js"></script>
     <script src="js/buy.js"></script>
+    <script src="js/monsters.js"></script>
 </head>
 <body>
+    <script src="js/log.js"></script>
     <canvas width="200" height="200" id="main"></canvas>
     <script src="js/drawer.js"></script>
-    <button onclick="incrementMoney()" id="incr">Click on me!</button>
+    <button onclick="incrementMoney()" id="incr">Make money from air</button>
     <ul class="equip">
         <li id="sword"><button onclick="buySword()">Sword (50g)</button></li>
         <li id="helmet"><button onclick="buyHelmet()">Helmet (200g)</button></li>
@@ -22,6 +24,11 @@
         <li><p id="moneyPerClick">1</p></li>
         <li><p>Money per second:</p></li>
         <li><p id="moneyPerSec">0</p></li>
+        <li><p>Success:</p></li>
+        <li><p id="success">0</p></li>
+    </ul>
+    <ul class="monsters">
+        <li><button onclick="killRat()">Kill rat</button></li>
     </ul>
 </body>
 </html>

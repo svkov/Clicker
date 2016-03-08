@@ -1,5 +1,14 @@
 body{
+    color: #fff;
     background-color: #000;
+}
+
+ul{
+    list-style: none;
+}
+
+p{
+    font-size: 20px;
 }
 
 #incr{
@@ -10,15 +19,39 @@ body{
     background-color: #939393
 }
 
-p{
-    color: #fff;
-    font-size: 20px;
-}
-
 .money{
     position: absolute;
     display: block;
-    list-style: none;
     right: 50%;
     top: 0%;
+}
+
+#log{
+    font-size: 20px;
+    background: #727272;
+    position: absolute;
+    display: block;
+    width: 200px;
+    height: 50%;
+    right: 30%;
+    top: 0%;
+}
+
+.clearLog{
+    width: 240px;
+    position: absolute;
+    right: 30%;
+    top: 50%;
+}
+
+.equip{
+    position: absolute;
+    left: 0%;
+    top: 25%;
+}
+
+.monsters{
+    position: absolute;
+    left: 20%;
+    top: 25%;
 }

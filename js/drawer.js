@@ -59,5 +59,4 @@ function drawHelmet() {
     ctx.lineTo(100, -30);
     ctx.lineTo(75, 20);
     ctx.fill();
-    //TODO: draw helmet
 }

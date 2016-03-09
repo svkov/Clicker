@@ -42,7 +42,7 @@ function killMob(mob) {
     if(chance >= 1) {
         chance = 0.99;
     }
-    if (Math.random() > chance) {
+    if (Math.random() < chance) {
         win(mob.prise);
         makeMessage('You kill '+mob.name+'!');
         makeMessage('Your chance to win was '+chance);
@@ -71,4 +71,5 @@ function chanceToKillMob(mob) {
         chance = 0.99;
     }
     makeMessage('You can kill '+mob.name+' with chance '+chance);
+    chance = 0;
 }

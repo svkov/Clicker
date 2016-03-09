@@ -2,7 +2,7 @@ var swordBuyed = false;
 var helmetBuyed = false;
 
 var sword = {
-    price: 50,
+    price: 5,
     isBuyed: false,
     moneyPerSecond: 0,
     moneyPerClick: 1,
@@ -11,7 +11,7 @@ var sword = {
 }
 
 var helmet = {
-    price: 200,
+    price: 20,
     isBuyed: false,
     moneyPerSecond: 1,
     moneyPerClick: 0,

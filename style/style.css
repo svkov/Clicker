@@ -1,14 +1,13 @@
 body{
+    padding: 0px;
     color: #fff;
     background-color: #000;
+    font-size: 20px;
 }
 
 ul{
+    display: block;
     list-style: none;
-}
-
-p{
-    font-size: 20px;
 }
 
 #incr{
@@ -27,6 +26,7 @@ p{
 }
 
 #log{
+    overflow: scroll;
     font-size: 20px;
     background: #727272;
     position: absolute;
@@ -44,14 +44,48 @@ p{
     top: 50%;
 }
 
-.equip{
+#equip{
     position: absolute;
     left: 0%;
     top: 25%;
 }
 
-.monsters{
+.equip{
+    margin: 10px;
+}
+
+#monsters{
     position: absolute;
     left: 20%;
     top: 25%;
 }
+.help {
+    margin-left: 5px;
+    text-align: left;
+    background-image: url(/res/help.png);
+    width: 36px;
+    height: 36px;
+}
+
+.killButton {
+    height: 36px;
+    width: 60%;
+}
+
+.monsters {
+    width: 100%;
+    height: 50%;
+}
+
+.monster {
+    width: 100%;
+    padding: 0px;
+    display: inline-block;
+}
+
+.monster>li{
+    height: 100%;
+    width: 100%;
+}
+
+

@@ -1,45 +1,38 @@
 var swordBuyed = false;
 var helmetBuyed = false;
 
-function buy(price, mpk, mps, draw){
-    success += 1;
-    money -= price;
-    moneyPerClick += mpk;
-    moneyPerSec += mps;
-    draw();
-    refreshAll();
+var sword = {
+    price: 50,
+    isBuyed: false,
+    moneyPerSecond: 0,
+    moneyPerClick: 1,
+    draw: drawSword,
+    name: 'sword'
 }
 
-function checkPriceAndFlag(price, flag) {
-    if (money < price) {
+var helmet = {
+    price: 200,
+    isBuyed: false,
+    moneyPerSecond: 1,
+    moneyPerClick: 0,
+    draw: drawHelmet,
+    name: 'helmet'
+}
+
+function buy(equip) {
+    if(money < equip.price){
         makeMessage('You didn\'t have enough money');
-        return false;
-    }
-    if (flag) {
-        makeMessage('You already buy it!');
-        return false;
-    }
-    return true;
-}
-
-function buySword() {
-    'use strict';
-    var price = 50;
-    if (!checkPriceAndFlag(price, swordBuyed)) {
         return;
     }
-    buy(price, 1, 0, drawSword);
-    swordBuyed = true;
-    makeMessage('You buy a sword!');
-}
-
-function buyHelmet() {
-    'use strict';
-    var price = 200;
-    if (!checkPriceAndFlag(price, helmetBuyed)) {
+    if(equip.isBuyed){
+        makeMessage('You already buy it');
         return;
     }
-    buy(price, 0, 1, drawHelmet);
-    helmetBuyed = true;
-    makeMessage('You buy a helmet!');
+    success += 1;
+    money -= equip.price;
+    moneyPerClick += equip.moneyPerClick;
+    moneyPerSec += equip.moneyPerSecond;
+    equip.draw();
+    makeMessage('You buy a '+equip.name);
+    refreshAll();
 }

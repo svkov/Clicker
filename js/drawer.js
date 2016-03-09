@@ -1,38 +1,42 @@
 var main = document.getElementById("main");
 var ctx = main.getContext("2d");
+drawHero();
 
-ctx.fillStyle = "#555";
-ctx.strokeStyle = "#fdfbfb";
+function drawHero() {
+    ctx.fillStyle = "#555";
+    ctx.strokeStyle = "#fdfbfb";
 
-//HEAD
-ctx.beginPath();
-ctx.moveTo(100, 0);
-ctx.quadraticCurveTo(50, 25, 100, 50);
-ctx.moveTo(100, 0);
-ctx.quadraticCurveTo(150, 25, 100, 50);
-ctx.stroke();
+    //HEAD
+    ctx.beginPath();
+    ctx.moveTo(100, 0);
+    ctx.quadraticCurveTo(50, 25, 100, 50);
+    ctx.moveTo(100, 0);
+    ctx.quadraticCurveTo(150, 25, 100, 50);
+    ctx.stroke();
 
-//BODY
-ctx.beginPath();
-ctx.moveTo(100, 50);
-ctx.lineTo(100, 150);
+    //BODY
+    ctx.beginPath();
+    ctx.moveTo(100, 50);
+    ctx.lineTo(100, 150);
 
-//LEFT LEG
-ctx.moveTo(100, 150);
-ctx.lineTo(75, 175);
+    //LEFT LEG
+    ctx.moveTo(100, 150);
+    ctx.lineTo(75, 175);
 
-//RIGHT LEG
-ctx.moveTo(100, 150);
-ctx.lineTo(125, 175);
+    //RIGHT LEG
+    ctx.moveTo(100, 150);
+    ctx.lineTo(125, 175);
 
-//RIGHT HAND
-ctx.moveTo(100, 75);
-ctx.lineTo(125, 100);
+    //RIGHT HAND
+    ctx.moveTo(100, 75);
+    ctx.lineTo(125, 100);
 
-//LEFT HAND
-ctx.moveTo(100, 75);
-ctx.lineTo(75, 100);
-ctx.stroke();
+    //LEFT HAND
+    ctx.moveTo(100, 75);
+    ctx.lineTo(75, 100);
+    ctx.stroke();
+
+}
 
 function drawSword() {
     'use strict';

@@ -14,10 +14,11 @@ makeMessage('Game started!');
 function makeMessage(message){
     var li = document.createElement('li');
     li.innerHTML = message;
-    if(log.childElementCount > 10){
+    if(log.childElementCount > 1000){
         clearLog();
     }
     document.getElementById('log').appendChild(li);
+    log.scrollTop = 99999;
 }
 
 function clearLog() {

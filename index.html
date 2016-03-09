@@ -5,17 +5,17 @@
     <title>Clicker</title>
     <link rel="stylesheet" href="style/style.css">
     <script src="js/main.js"></script>
-    <script src="js/buy.js"></script>
     <script src="js/monsters.js"></script>
 </head>
 <body>
-    <script src="js/log.js"></script>
     <canvas width="200" height="200" id="main"></canvas>
+    <script src="js/log.js"></script>
     <script src="js/drawer.js"></script>
+    <script src="js/buy.js"></script>
     <button onclick="incrementMoney()" id="incr">Make money from air</button>
-    <ul class="equip">
-        <li id="sword"><button onclick="buySword()">Sword (50g)</button></li>
-        <li id="helmet"><button onclick="buyHelmet()">Helmet (200g)</button></li>
+    <ul id="equip">
+        <li class="equip" id="sword"><button onclick="buy(sword)">Sword (50g)</button></li>
+        <li class="equip" id="helmet"><button onclick="buy(helmet)">Helmet (200g)</button></li>
     </ul>
     <ul class="money">
         <li><p>Money:</p></li>
@@ -27,8 +27,17 @@
         <li><p>Success:</p></li>
         <li><p id="success">0</p></li>
     </ul>
-    <ul class="monsters">
-        <li><button onclick="killRat()">Kill rat</button></li>
+    <ul id="monsters">
+        <li class="monsters">
+        <ul class="monster">
+            <button class="killButton" onclick="killMob(rat)">Kill rat</button>
+            <button onclick="chanceToKillMob(rat)" class="help"></button>
+        </ul>
+        <ul class="monster">
+            <button class="killButton" onclick="killMob(goblin)">Kill goblin</button>
+            <button onclick="chanceToKillMob(goblin)" class="help"></button>
+        </ul>
+        </li>
     </ul>
 </body>
 </html>

@@ -2,7 +2,7 @@ var swordBuyed = false;
 var helmetBuyed = false;
 
 var sword = {
-    price: 5,
+    price: 50,
     isBuyed: false,
     moneyPerSecond: 0,
     moneyPerClick: 1,
@@ -11,12 +11,30 @@ var sword = {
 }
 
 var helmet = {
-    price: 20,
+    price: 200,
     isBuyed: false,
     moneyPerSecond: 1,
     moneyPerClick: 0,
     draw: drawHelmet,
     name: 'helmet'
+}
+
+var armor = {
+    price: 1000,
+    isBuyed: false,
+    moneyPerSecond: 10,
+    moneyPerClick: 5,
+    draw: drawArmor,
+    name: 'armor'
+}
+
+var newSkin = {
+    price: 1,
+    isBuyed: false,
+    moneyPerSecond: 50,
+    moneyPerClick: 10,
+    draw: drawNewSkin,
+    name: 'new skin'
 }
 
 function buy(equip) {
@@ -28,11 +46,25 @@ function buy(equip) {
         makeMessage('You already buy it');
         return;
     }
+    if(equip.name == 'new skin') {
+        sword.isBuyed = true;
+        helmet.isBuyed = true;
+        armor.isBuyed = true;
+    }
     success += 1;
     money -= equip.price;
     moneyPerClick += equip.moneyPerClick;
     moneyPerSec += equip.moneyPerSecond;
     equip.draw();
-    makeMessage('You buy a '+equip.name);
+    makeBuyMessage(equip.name);
     refreshAll();
+}
+
+function makeBuyMessage(name){
+    var vowel = ['a', 'e', 'o', 'i', 'u'];
+    var prefix = 'a';
+    if(vowel.indexOf(name[0]) >= 0){
+        prefix += 'n';
+    }
+    makeMessage('You buy '+prefix+' '+name);
 }

@@ -1,6 +1,3 @@
-var swordBuyed = false;
-var helmetBuyed = false;
-
 var sword = {
     price: 50,
     isBuyed: false,
@@ -29,7 +26,7 @@ var armor = {
 }
 
 var newSkin = {
-    price: 1,
+    price: 10000,
     isBuyed: false,
     moneyPerSecond: 50,
     moneyPerClick: 10,
@@ -56,6 +53,7 @@ function buy(equip) {
     moneyPerClick += equip.moneyPerClick;
     moneyPerSec += equip.moneyPerSecond;
     equip.draw();
+    equip.isBuyed = true;
     makeBuyMessage(equip.name);
     refreshAll();
 }
